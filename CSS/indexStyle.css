@@ -1,0 +1,37 @@
+#header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -70px;
+  }
+  #main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -150px;
+  }
+
+
+.vertical-menu {
+    width: 300px;
+    height: 200px;
+    overflow-y: auto;
+    text-align: center;
+  }
+  
+  .vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc;
+  }
+  
+  .vertical-menu a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
