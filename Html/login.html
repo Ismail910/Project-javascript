@@ -5,8 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
+
+    <div id="container">
+        <!-- <div id="tabs">
+            <p id="lt" class="tabs" onclick="loginTabFun()">Log in</p>
+            <p id="rt" class="tabs" onclick="regTabFun()">Register</p>
+            <div id="clear"></div>
+        </div> -->
+
+        <div id="cont">
+           
+                <div id="login" >
+                    <h3>Sign in</h3>
+                    <input id="lEmail" type="email" placeholder="Email" required/>
+                    <input id="lPass" type="password" placeholder="Password" required/>
+                    <input type="submit" onclick="login()" value="Submit"/>
     
+                   
+                </div>
+                <hr>
+                <div id="register">
+                    <h3>Register</h3>
+    
+                    <input id="user" type="text" placeholder="User Name" required/>
+                    <input id="rEmail" type="email" placeholder="Email" required/>
+                    <input id="rPass" type="password" placeholder="Password" required/>
+                    <input id="rrPass" type="password" placeholder="Re write Password" required/>
+                    <input type="submit" onclick="register()" value="Submit"/>
+                </div >
+    
+             
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
 </body>
 </html>

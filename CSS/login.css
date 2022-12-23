@@ -1,0 +1,115 @@
+* {
+            padding: 0;
+            margin: 0;
+            box-size:border-box;
+        }
+        body {
+            background: rgba(39, 69, 114, 0.4);
+        }
+        #container {
+            /* width: ; */
+            margin: 0 auto;
+            margin-top: 150px;
+            
+        }
+
+        /* .tabs {
+            display: table-cell;
+            width: 30%;
+            background-color: rgba(56, 81, 88, 0.82);
+            padding: 10px;
+            float: left;
+            text-align: center;
+            vertical-align: middle;
+            border: 2px solid #ffffff;
+            border-bottom: 0px;
+            position: relative;
+            font-size: 1.3em;
+            color: #ffffff;
+        } */
+        /* .tabs:hover, p{
+            cursor: pointer;
+        } */
+
+        /* #lt {
+            background-color: rgb(147, 195, 218);
+        } */
+        #cont {
+            /* width: 100%; */
+            /* height: 300px; */
+            /* background-color: rgba(177, 206, 214, 0.82); */
+            border: 2px solid #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+        }
+
+       #login input{
+            display: block;
+            width: 250px;
+            margin: 30px 50px;
+            padding: 10px;
+            font-size: 1.3em;
+            color: rgba(42, 67, 73, 0.82);
+            outline: 2px solid #ffffff;
+        }
+        hr {
+            background: rgb(19, 18, 18);
+            width: 10px;
+        }
+        
+        #register input {
+            display: inline-block;
+            width: 250px;
+            margin: 30px ;
+            padding: 10px;
+            font-size: 1.3em;
+            color: rgba(42, 67, 73, 0.82);
+            outline: 2px solid #ffffff;
+        }
+        #register input[type="submit"] {
+            margin-left:30%;
+        }
+
+        input[type="submit"] {
+            width: 200px;
+            color: #6e6e6e;
+            
+        }
+
+        /* #clear {
+            clear: both;
+        } */
+
+        .comm {
+            /* position: absolute; */
+            visibility: hidden;
+        }
+        #login {
+            width: 100%;
+           
+        }
+
+        h3 {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 10px 15px;
+            font-size: 1.5em;
+            color: #ffffff;
+        }
+
+        #forgot h3 {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #forgot div {
+            margin-top: 30px;
+        }
+        p {
+            padding: 10px 15px;
+            font-size: 1.3em;
+            color: #ffffff;
+        }
+       
