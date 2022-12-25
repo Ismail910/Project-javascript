@@ -1,0 +1,40 @@
+* {
+    background-color: #eee;
+    margin: 10px;
+}
+
+#conta {
+    border: 1px solid #222;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 900px;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+#head {
+    /* background-color: aquamarine; */
+    border:1px solid #222;
+    height: auto;
+}
+
+#contin{
+   
+    display: flex;
+    height: 100%;
+}
+#answers{
+    background-color: bisque;
+    border: 1px solid #222;
+    width: 20%;
+    height: 100%;
+
+}
+#Quiz{
+    background-color: azure;
+    border: 1px solid #222;
+    width: 80%;
+    height: 100%;
+}

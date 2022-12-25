@@ -1,7 +1,7 @@
 
 var json = [];
 var count = 0 ;
-var x
+var x;
 function register()
 {
    

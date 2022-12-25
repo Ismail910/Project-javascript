@@ -8,15 +8,19 @@ function getData(){
             //console.log(dataAfterConvert);
             for(var i=0;i<dataAfterConvert.length;i++)
             {
-                //console.log(dataAfterConvert[i]["name"]);
+                console.log(dataAfterConvert[i]['level']);
                 const para = document.createElement('a');
                 const node = document.createTextNode(dataAfterConvert[i]['name']);
                 para.href="../Html/template.html";
                 para.id=dataAfterConvert[i]['level'];
                 para.appendChild(node);
                 document.getElementById("menu").appendChild(para);
-                para.addEventListener("click",function (){
-                    document.getElementById("choose").innerText=dataAfterConvert[i]["name"];
+                document.getElementById(para.id).addEventListener("click",function (){
+                    
+                    // const myObj = JSON.stringify(dataAfterConvert);
+                    // sessionStorage.setItem('questionandAnswer',myObj);
+                    sessionStorage.setItem('currentlevel',para.id);
+                    
                 });
             }  
 
@@ -28,4 +32,5 @@ function getData(){
 
 }
 getData();
+
 
