@@ -12,12 +12,6 @@ function register()
         email = document.getElementById("rEmail").value,
         password = document.getElementById("rPass").value,
         passwordretype = document.getElementById("rrPass").value;
-        
-       
-
-       
-    
-        
 
     if(userName == "")
     {

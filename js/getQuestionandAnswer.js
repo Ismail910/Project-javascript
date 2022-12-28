@@ -4,12 +4,12 @@ var ansobj;
 function drag(ansget) {
     ansobj=ansget;
   }
-  function allowDrop(ev) {
-    ev.preventDefault();
-  }
-  function DropElement(elem){
-     var x=document.getElementById(elem);
-      x.appendChild=(ansobj);
+function allowDrop(ev) {
+ev.preventDefault();
+}
+function DropElement(elem){
+    var x=document.getElementById(elem);
+    x.appendChild=(ansobj);
 }
 function getData(){
     var xhttp= new XMLHttpRequest();
