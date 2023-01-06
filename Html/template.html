@@ -9,13 +9,20 @@
 </head>
 <body>
     <div id="conta">
-        <div id="head"></div>
-        <div id="contin">
-            <div id="answers"></div>
+        <div id="head"  draggable="true" ondragstart="drag(event)">
+        </div>
+        <div id="contin"  >
+            <div id="answers"   ondrop="drop(event)" ondragover="allowDrop(event)" >
+
+            </div>
             <div id="Quiz"></div>
         </div>
        
     </div>
+
+
+
+
 
    <script src="../js/getQuestionandAnswer.js"></script>
 </body>
