@@ -16,6 +16,7 @@ function drag(ev) {
     console.log(data);
     ev.target.appendChild(document.getElementById(data));
   }
+<<<<<<< HEAD
   function allowDrop(ev) {
     ev.preventDefault();
   }
@@ -25,6 +26,15 @@ function drag(ev) {
 //       console.log(ansobj);
 //       console.log(elem);
 // }
+=======
+function allowDrop(ev) {
+ev.preventDefault();
+}
+function DropElement(elem){
+    var x=document.getElementById(elem);
+    x.appendChild=(ansobj);
+}
+>>>>>>> 64dd6fcd357b6653e0fa65e2072553ae938b9797
 function getData(){
     var xhttp= new XMLHttpRequest();
     xhttp.onreadystatechange=function(){

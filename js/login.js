@@ -2,6 +2,9 @@
 var json = [];
 var count = 0 ;
 var x;
+var emailSto = localStorage.getItem("email" );
+var passSto = localStorage.getItem("password" );
+
 function register()
 {
    
@@ -9,8 +12,6 @@ function register()
         email = document.getElementById("rEmail").value,
         password = document.getElementById("rPass").value,
         passwordretype = document.getElementById("rrPass").value;
-    
-        
 
     if(userName == "")
     {
@@ -35,16 +36,20 @@ function register()
     else if(password != passwordretype) {
         alert("Password don't match retype your Password.");
         return;
-    }else 
-    {
+    }
+    else if( email == emailSto){
+        alert(email + " is already register.");
+        return;
+        
+    }else {
         function Client(userName, email , password) {
             this.userName = userName
             this.email = email
             this.password = password
             
-      }
+        }
       
-      clients = new Array();
+        clients = new Array();
       
       for (i = 0;i < 10 ; i++) {
           clients.push(new Client(userName , email , password))
@@ -62,7 +67,9 @@ function register()
     count++;
    
     console.log("all",json);
-  
+    localStorage.setItem("User Name",  userName);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password",  password);
  
     return x ;
 
@@ -72,49 +79,55 @@ function register()
 
 
 console.log("outer",json)
-//else if(emailArray.indexOf(email) == -1){
-    //                 emailArray.push(email);
-    //                 passwordArray.push(password);
-    
-    //                 alert(email + "  Thanks for registration. \nTry to login Now");
-    
-    //                 document.getElementById("re").value ="";
-    //                 document.getElementById("rp").value="";
-    //                 document.getElementById("rrp").value="";
-    //             }
-    //             else{
-    //                 alert(email + " is already register.");
-    //                 return ;
-    //             }
-
-// favorites = [{
-        //     "artist" : "Mike king",    
-        //     "song_name" : "Mild Songs"  
-        //   }];
-      
-      
-        //   var myObj = {
-        //     "artist" : "Johny steve",    
-        //     "song_name" : "Rock Songs"  
-        //   };
-      
-        //   favorites.push(myObj);
-      
-        //   console.log(favorites);
-        //   console.log(favorites[1]);
-
 
         function login(){
           
 
             var email = document.getElementById("lEmail").value;
             var password = document.getElementById("lPass").value;
-            for(var i = 0; i < json.length ; i++)
+           if(json == 0)
+           {
+
+            if( emailSto != email){
+                // console.log("h1");
+            if (email == ""){
+                alert("Email required.");
+                return ;
+            }
+            alert("Email does not exist.");
+            return ;
+            
+           }
+            else if(passSto != password){
+                // console.log("p1");
+                if (password == ""){
+                    alert("Password required.");
+                    return ;
+                }
+                alert("Password does not match.");
+                return ;
+            }
+            else if(emailSto == email ) {
+               // console.log("e1");
+                if(email == "admin@admin.com")
+                window.location = "admin.html"; 
+                else{
+                    window.location = "index.html"
+                }
+                alert(email + " yor are login Now \n welcome to our website." );
+                return ;
+
+            }
+               
+           }else {
+            
+            for(var i = 0; i <json.length; i++)
             {
                console.log(json[i]["email"]);
                console.log(json[i]["password"]);
 
             if( json[i]["email"] != email){
+                //console.log("h2");
             if (email == ""){
                 alert("Email required.");
                 return ;
@@ -124,6 +137,7 @@ console.log("outer",json)
             
            }
             else if( json[i]["password"] != password){
+                console.log("p2");
                 if (password == ""){
                     alert("Password required.");
                     return ;
@@ -131,7 +145,8 @@ console.log("outer",json)
                 alert("Password does not match.");
                 return ;
             }
-            else {
+            else if(email == emailSto ) {
+                console.log("e2");
                 if(email == "admin@admin.com")
                 window.location = "admin.html"; 
                 else{
@@ -139,7 +154,7 @@ console.log("outer",json)
                 }
                 alert(email + " yor are login Now \n welcome to our website." );
                 return ;
-                
+
             }
                
              }
@@ -147,21 +162,8 @@ console.log("outer",json)
             
 
             }
+        }
 
        
 
-        // favorites = [{
-        //     "artist" : "Mike king",    
-        //     "song_name" : "Mild Songs"  
-        //   }];
-      
-      
-        //   var myObj = {
-        //     "artist" : "Johny steve",    
-        //     "song_name" : "Rock Songs"  
-        //   };
-      
-        //   favorites.push(myObj);
-      
-        //   console.log(favorites);
-        //   console.log(favorites[1]);
+       
