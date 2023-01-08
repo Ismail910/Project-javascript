@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+img {
+    width: 300px;
+}
+a:link {
+    color: brown;
+    
+    text-decoration: none;
+}
+.Containar {
+    
+    height: 50%;
+    background-color: black;
+    margin-top:20% ;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 20px;   
+}
+
+.btn-group-vertical {
+    margin-left:20% ;
+}
