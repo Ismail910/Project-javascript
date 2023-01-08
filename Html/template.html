@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/template.css">
-    <link rel="../audio/click.mpeg" href="http://127.0.0.1:5500/Html/template.html">
+    
 </head>
-<body>
+<body onload="makeprogress()">
     <div id="conta">
+        <label for="timer">exam end at 10m</label>
+        <progress id="timer" min="0" value="100" max="100" style="width: 98%; border-radius: 5px; border: 2px black solid;"></progress>
         <div id="head"  draggable="true" ondragstart="drag(event)">
         </div>
         <div id="contin"  >
@@ -21,12 +23,25 @@
        
     </div>
 
-    <button style="position: fixed; top: 94%;left: 50%; padding: 7px;" onclick="checkanswer()">Submit Answers</button>
+    <button id="submit" style="position: fixed; top: 94%;left: 50%; padding: 7px;" onclick="checkanswer()">Submit Answers</button>
     <audio src="../audio/click.mpeg" id="drag" hidden></audio>
     <audio src="../audio/correct.mpeg" id="correctanswer" hidden></audio>
     <audio src="../audio/wrong.mpeg" id="wronganswer" hidden></audio>
 
 
+    <div id="continer">
+        <p id="grade" style="padding: 5px; color: gray; border-radius: 5px;">your grade =</p>
+        <p id="time"style="padding: 5px; color: gray; border-radius: 5px;">finish in time :</p> 
+        <button id="showcorrectanswer" style="padding: 5px; color: gray; border-radius: 10px;" onclick="getcorrectanswer()" >Show Correct Answer</button>
+        <button id="startagain" style="padding: 5px; color: gray; border-radius: 10px;"
+         onclick="back()" >Start again </button>
+         <button id="showyouranswer" style="padding: 5px; color: gray; border-radius: 10px;"
+         onclick="backmyanswer()" >show my answer </button>
+        <button id="selectnewlevel" style="padding: 5px; color: gray; border-radius: 10px;"
+        onclick="backtolevel()">Select new Level</button>
+
+    </div>
+  
    <script src="../js/getQuestionandAnswer.js"></script>
 </body>
 </html>

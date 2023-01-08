@@ -40,3 +40,17 @@
     width: 80%;
     height:auto;
 }
+#continer
+{
+    background-color: black;
+    display:none;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 15%;
+    height: 300px;
+    padding:10px;
+    margin: 300px auto;
+    transform: scale(2);
+    perspective: 600px;
+
+}

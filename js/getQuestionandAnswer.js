@@ -91,37 +91,144 @@ function getData(){
 }
 getData();
 
-function checkanswer()
+ function checkanswer()
 {
+    
+    var checkid=10,countcorrect=0,countwrong=0;
+    var xhttp= new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+        if(this.status==200 && this.readyState==4)
+        {
+            
+            dataAfterConvert=JSON.parse(this.responseText);
+                for(var i=0;i<dataAfterConvert.length;i++)
+                {
+                    if(dataAfterConvert[i]['level']==sessionStorage.getItem('currentlevel'))
+                    {
+                        
+                        for(var j=0;j<dataAfterConvert[i]["answers"].length;j++)
+                        {
+                            if(dataAfterConvert[i]['answers'][j].answer==document.getElementById(checkid).textContent)
+                            {
+                                document.getElementById(checkid).style.backgroundColor="green";
+                                countcorrect++;
+                               // document.getElementById("correctanswer").play();
+                            }
+                            else
+                            {
+                                document.getElementById(checkid).style.backgroundColor="red";
+                                countwrong++;
+                               // document.getElementById("wronganswer").play(); 
+                                
+                            }
+                            checkid++;
+                        }
+                        if(countcorrect==dataAfterConvert[i]["answers"].length)
+                        {
+                            document.getElementById("correctanswer").play();
+                        }
+                        else
+                        {
+                            document.getElementById("wronganswer").play(); 
+                        }
+                       document.getElementById("conta").style.display="none";
+                       document.getElementById("submit").style.display="none";
+                       document.getElementById("continer").style.display="block"
+                       document.getElementById("grade").innerText+=("  "+countcorrect+"/"+dataAfterConvert[i]["answers"].length)
+                       
+                    }
+                }
+           
+        }
+    }
+    xhttp.open("GET","../json/questionandAnswer.json",true);
+    xhttp.send();
+}
+
+function changcolor()
+{
+    document.getElementById('startagain').style.backgroundColor='green' 
+}
+function back()
+{
+    document.getElementById("conta").style.display="flex";
+    document.getElementById("submit").style.display="block";
+    document.getElementById("continer").style.display="none";
+    document.getElementById("grade").innerText="your grade =";
+    document.getElementById("time").innerText="finish in time :";
+    location.replace("template.html");
+}
+function backmyanswer()
+{
+    document.getElementById("conta").style.display="flex";
+    document.getElementById("submit").style.display="block";
+    document.getElementById("continer").style.display="none";
+    document.getElementById("grade").innerText="your grade =";
+    document.getElementById("time").innerText="finish in time :";
+}
+
+function backtolevel()
+{
+    document.getElementById("conta").style.display="flex";
+    document.getElementById("submit").style.display="block";
+    document.getElementById("continer").style.display="none";
+    document.getElementById("grade").innerText="your grade =";
+    document.getElementById("time").innerText="finish in time :";
+    location.replace("index.html");
+}
+function getcorrectanswer()
+{
+    console.log("asd");
+    document.getElementById("conta").style.display="flex";
+    document.getElementById("submit").style.display="block";
+    document.getElementById("continer").style.display="none";
+    document.getElementById("grade").innerText="your grade =";
+    document.getElementById("time").innerText="finish in time :";
     var checkid=10;
     var xhttp= new XMLHttpRequest();
     xhttp.onreadystatechange=function(){
         if(this.status==200 && this.readyState==4)
         {
+            
             dataAfterConvert=JSON.parse(this.responseText);
-            for(var i=0;i<dataAfterConvert.length;i++)
-            {
-                if(dataAfterConvert[i]['level']==sessionStorage.getItem('currentlevel'))
+                for(var i=0;i<dataAfterConvert.length;i++)
                 {
-                    for(var j=0;j<dataAfterConvert[i]["answers"].length;j++)
+                    if(dataAfterConvert[i]['level']==sessionStorage.getItem('currentlevel'))
                     {
-                        if(dataAfterConvert[i]['answers'][j].answer==document.getElementById(checkid).textContent)
+                        
+                        for(var j=0;j<dataAfterConvert[i]["answers"].length;j++)
                         {
-                            document.getElementById(checkid).style.backgroundColor="green";
-                           document.getElementById("correctanswer").play();
+                            document.getElementById(checkid).style.backgroundColor="gray";
+                            document.getElementById(checkid).style.textAlign="center"
+                            document.getElementById(checkid).textContent=  dataAfterConvert[i]['answers'][j].answer
+                            checkid++;
                         }
-                        else
-                        {
-                            document.getElementById(checkid).style.backgroundColor="red";
-                            document.getElementById("wronganswer").play();
-                        }
-                        checkid++;
+                       
                     }
-                    
                 }
-            }
+           
         }
     }
     xhttp.open("GET","../json/questionandAnswer.json",true);
     xhttp.send();
+
+   
+   
+}
+
+function makeprogress()
+{
+    var p=document.getElementById("timer");
+    const myInterval= setInterval(()=>{
+        
+    if(p.value<=0) 
+    {
+        clearInterval(myInterval);
+        checkanswer();
+    }
+    else
+    {
+        p.value-=10
+    }
+    },1000);
 }
