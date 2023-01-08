@@ -1,0 +1,13 @@
+body{
+    background-image: url("background.svg");
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+button{
+    width: 120px;
+    height: 40px;
+}
