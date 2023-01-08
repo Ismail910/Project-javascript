@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 900px;
+    height: auto;
     justify-content: flex-start;
     align-items: stretch;
     flex-direction: column;
@@ -17,7 +17,9 @@
 #head {
     /* background-color: aquamarine; */
     border:1px solid #222;
-    height: auto;
+    height: 200px;
+    padding-top: 5px;
+
 }
 
 #contin{
@@ -29,12 +31,12 @@
     background-color: bisque;
     border: 1px solid #222;
     width: 20%;
-    height: 100%;
+    height: auto;
 
 }
 #Quiz{
     background-color: azure;
     border: 1px solid #222;
     width: 80%;
-    height: 100%;
+    height:auto;
 }
