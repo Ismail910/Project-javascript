@@ -31,6 +31,7 @@ function getData(){
         {
              dataAfterConvert=JSON.parse(this.responseText);
             //console.log(dataAfterConvert);
+            var questions=[];
             for(var i=0;i<dataAfterConvert.length;i++)
             {
                 //console.log(dataAfterConvert[i]['level']);
@@ -41,27 +42,21 @@ function getData(){
                    document.getElementById("head").style.columnFill="auto"
                    for(var j=0;j<dataAfterConvert[i]["answers"].length;j++)
                    {
+                    questions.push(dataAfterConvert[i]['answers'][j].answer);
                     //div contains answers to drag in correct answer filed
-                    const para = document.createElement('p');
-                    const node = document.createTextNode(dataAfterConvert[i]['answers'][j].answer);
-                    para.appendChild(node);
-                    para.id="ans"+id++;
-                    para.style.border="2px black solid";
-                    para.style.width="120px"
-                    para.style.textAlign="center"
-                    var randomColor = Math.floor(Math.random()*16777215).toString(16);
-                    para.style.backgroundColor="#" +randomColor;
-                    document.getElementById("head").appendChild(para);
-                    para.draggable=true;
+                    
                    
                  
+
+   
                     
                     //field to show questions
                     const paraque = document.createElement('p');
                     const nodeque = document.createTextNode(dataAfterConvert[i]['questions'][j].question);
                     paraque.id="que"+idque++;
-                    paraque.style.border="2px black solid"
+                    paraque.style.border="2px gray solid"
                     paraque.style.padding="20px"
+                    paraque.className="que"
                     //console.log(paraque.id)
                     paraque.appendChild(nodeque);
                     document.getElementById("Quiz").appendChild(paraque);
@@ -71,17 +66,42 @@ function getData(){
                     const paraans = document.createElement('div');
                     const nodeans = document.createTextNode("");
                     paraans.id=idputans++;
-                    paraans.style.width="150px";
-                    paraans.style.border="2px black solid";
-                    paraans.style.height="50px";
-                    paraans.style.marginBottom="20px"
+                    paraans.className="answerdrop"
+                    
                     paraans.appendChild(nodeans);
                     document.getElementById("answers").appendChild(paraans);
                     paraans.ondragover=allowDrop(event);
                    }
                 }
             }  
-            
+            while(questions.length>0)
+                {
+                    var random1 = Math.floor(Math.random() * questions.length) ;
+                    var choice1 = questions[random1];
+                    //console.log(questions.length);
+                    const para = document.createElement('p');
+                    const node = document.createTextNode(choice1); 
+                    para.appendChild(node);
+                    para.id="ans"+id++;
+                    para.style.border="none";
+                    para.style.padding="6px";
+                    para.style.borderRadius="7px";
+                    para.style.width="120px";
+                    //para.style.alignItems="center"
+                    para.style.textAlign="center"
+                    para.style.color="white"
+                    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+                    para.style.backgroundColor="#" +randomColor;
+                    if(para.style.backgroundColor==("white") || para.style.backgroundColor==("azure") || para.style.backgroundColor==("whitesmoke"))
+                        {
+                            console.log("sd");
+                            para.style.backgroundColor="purple";
+                        }
+
+                    document.getElementById("head").appendChild(para);
+                    para.draggable=true;
+                    questions.splice(random1, 1);
+                }
         }
     }
 
@@ -135,7 +155,7 @@ getData();
                        document.getElementById("submit").style.display="none";
                        document.getElementById("continer").style.display="block"
                        document.getElementById("grade").innerText+=("  "+countcorrect+"/"+dataAfterConvert[i]["answers"].length)
-                       
+                       document.getElementById("time").innerText+=(" "+((document.getElementById("timer").max-document.getElementById("timer").value)/60).toFixed(1)+"m");
                     }
                 }
            
@@ -228,7 +248,7 @@ function makeprogress()
     }
     else
     {
-        p.value-=10
+        p.value-=1;
     }
     },1000);
 }

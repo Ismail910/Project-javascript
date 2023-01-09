@@ -3,46 +3,36 @@
     "level": 1,
     "name":"levelone",
     "questions":[
-       { "question":"orange"},
-       { "question":"q2"},
-       { "question":"q3"},
-       { "question":"q4"},
-       { "question":"q5"},
-       { "question":"q6"},
-       { "question":"q7"},
-       { "question":"q8"},
-       { "question":"q9"},
-       { "question":"q10"},
-       { "question":"q11"},
-       { "question":"q12"}
+       { "question":"a citrus fruit that is round and that has an orange skin"},
+       { "question":"a usually round object that is used in a game or sport or as a toy"},
+       { "question":"the clear liquid that has no color, taste, or smell, that falls from clouds as rain, that forms streams, lakes, and seas, and that is used for drinking, washing, etc."},
+       { "question":"a large natural flow of water that crosses an area of land and goes into an ocean, a lake, etc."},
+       { "question":"a thick growth of trees and bushes that covers a large area"}
     ],
     "answers":[
-        {"answer":"color"},
-        {"answer":"ans2"},
-        {"answer":"ans3"},
-        {"answer":"ans4"},
-        {"answer":"ans5"},
-        {"answer":"ans6"},
-        {"answer":"ans7"},
-        {"answer":"ans8"},
-        {"answer":"ans9"},
-        {"answer":"ans10"},
-        {"answer":"ans11"},
-        {"answer":"ans12"}
+        {"answer":"orange"},
+        {"answer":"ball"},
+        {"answer":"water"},
+        {"answer":"river"},
+        {"answer":"forest"}
     ]
    } ,
    {
     "level": 2,
     "name":"leveltwo",
     "questions":[
-       { "question":"sadsd"},
-       { "question":"sadsd"},
-       { "question":"sadsd"}
+       { "question":"an area of land that rises very high above the land around it and that is higher than a hill"},
+       { "question":"a large wild animal that has four long thin legs, brown fur, and antlers if male"},
+       { "question":"a hard usually transparent material that is used for making windows and other products"},
+       { "question":"a device that is used to open a lock or start an automobileThe usual type of key is a small metal object that you insert into a narrow opening and turn."},
+       { "question":"a device that is used for protection from the rain and sun,An umbrella consists of a circle of fabric attached to a folding frame that is connected to a central pole or handle."}
     ],
     "answers":[
-        {"answer":"sayhyhy"},
-        {"answer":"sayhyhy"},
-        {"answer":"sayhyhy"}
+        {"answer":"mountain"},
+        {"answer":"deer"},
+        {"answer":"glass"},
+        {"answer":"key"},
+        {"answer":"umbrella"}
     ]
    }
 ]

@@ -152,7 +152,7 @@ console.log("outer",json)
                 else{
                     window.location = "index.html"
                 }
-                alert(email + " yor are login Now \n welcome to our website." );
+               // alert(email + " yor are login Now \n welcome to our website." );
                 return ;
 
             }
