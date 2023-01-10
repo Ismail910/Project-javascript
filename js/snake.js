@@ -2,10 +2,16 @@
 var word;
 var level = 0;
 var question = 0;
+var score = 0;
+var temp_score = score;
 
 document.getElementById("level").innerHTML=level+1;
 document.getElementById("question").innerHTML=question+1;
+document.getElementById("score").innerHTML=score;
 
+
+var coin = document.getElementById("coin");
+var gameover_sound = document.getElementById("gameover");
 const blockSize = 25; //we will move by 25 at a time
 const rows = 20; //number of rows
 const columns = 25; //number of columns
@@ -29,8 +35,11 @@ var velocityY = 0;
 var foodX;
 var foodY;
 
+
+//for gameover condition stop update the canvas
 var gameOver = false;
 
+//get data from json file
 function getData()
 {
     var xhttp = new XMLHttpRequest();
@@ -39,14 +48,14 @@ function getData()
         if(this.status==200 && this.readyState==4)
         {
             var dataAfterConvert = JSON.parse(this.responseText);
-            word = Array.from(dataAfterConvert[level].questions[question].question);
-            word.toU
+            word = Array.from(dataAfterConvert[level].answers[question].answer);
         }
     }
-    xhttp.open("GET","words.json",true);
+    xhttp.open("GET","../json/questionandAnswer.json",true);
     xhttp.send();
 }
 
+//when window loaded get the data from json and start draw the canvas
  window.onload = function()
 {
     
@@ -69,19 +78,23 @@ function update()
         return;
     }
 
-    context.fillStyle = "#002147"; //set fill color to draw board
+    context.fillStyle = "#2c2c54"; //set fill color to draw board
     context.fillRect(0,0,board.width,board.height); //draw the board from 0,0 to width and height
 
     //draw the food in green color
-    context.fillStyle = "green";
+    context.fillStyle = "#e84118";
     context.fillRect(foodX,foodY,blockSize,blockSize);
     context.font="20px Arial";
     context.fillStyle = "white";
-    context.fillText(word[i],foodX+6,foodY+20,blockSize,blockSize);
+    context.fillText(word[i],foodX+5,foodY+20,blockSize,blockSize);
 
     //if the snake eat the food we push the food into its body array
     if(SnakeX == foodX && SnakeY == foodY)
     {
+        coin.play();
+        score++;
+        temp_score++;
+        document.getElementById("score").innerHTML=score;
         snakeBody.push([foodX,foodY]);
         placeFoodRandom();
         i++;
@@ -111,12 +124,15 @@ function update()
     //gameover conditions
     if(SnakeX < 0 || SnakeX > columns*blockSize || SnakeY < 0 || SnakeY > rows*blockSize )
     {
+        gameover_sound.play();
         gameOver = true;
         context.fillStyle = "red"; 
         context.fillRect(5*blockSize,5*blockSize,15*blockSize,10*blockSize);
-        context.font="50px Arial";
+        context.font="50px Arial bold";
         context.fillStyle = "white";
-        context.fillText("GameOver!",7*blockSize,10*blockSize);
+        context.fillText("GameOver!",8*blockSize,10*blockSize);
+        context.fillText("Score: "+score,9*blockSize,12*blockSize);
+
 
     }
     //gameover conditions
@@ -124,12 +140,15 @@ function update()
     {
         if(SnakeX == snakeBody[i][0] && SnakeY == snakeBody[i][1])
         {
+            gameover_sound.play();
             gameOver = true;
             context.fillStyle = "red"; 
             context.fillRect(5*blockSize,5*blockSize,15*blockSize,10*blockSize);
-            context.font="50px Arial";
+            context.font="50px Arial bold";
             context.fillStyle = "white";
-            context.fillText("GameOver!",7*blockSize,10*blockSize);
+            context.fillText("GameOver!",8*blockSize,10*blockSize);
+            context.fillText("Score: "+score,9*blockSize,12*blockSize);
+
         }
     }
     //win conditions
@@ -138,9 +157,11 @@ function update()
         gameOver=true;
         context.fillStyle = "green"; 
         context.fillRect(5*blockSize,5*blockSize,15*blockSize,10*blockSize);
-        context.font="50px Arial";
+        context.font="50px Arial bold";
         context.fillStyle = "white";
-        context.fillText("You Win!",9*blockSize,10*blockSize);
+        context.fillText("You Win!",8.5*blockSize,9*blockSize);
+        context.fillText("Score: "+score,9*blockSize,12*blockSize);
+
         
     }
     
@@ -148,7 +169,11 @@ function update()
 }
 function retry()
 {
+    i=0;
     gameOver = false;
+    score = score-temp_score;
+    document.getElementById("score").innerHTML=score;
+    temp_score=0;
     snakeBody = [];
     SnakeX = 5*blockSize;
     SnakeY = 5*blockSize;
@@ -159,16 +184,17 @@ function retry()
 }
 function next()
         {
-            if(level>=1)
+            if(level>1)
             {
                 alert("Congratulations!! No More Levels");
                 gameOver = true;
             }
-            else if(question<0)
+            else if(question<=4)
                 {
                     console.log("hi");
                     question++;
                     i=0;
+                    temp_score = 0;
                     document.getElementById("question").innerHTML=question+1;
                     gameOver=false;
                     snakeBody = [];
@@ -184,6 +210,7 @@ function next()
                     level++;
                     question=0;
                     i=0;
+                    temp_score = 0;
                     document.getElementById("level").innerHTML=level+1
                     document.getElementById("question").innerHTML=question+1;
                     gameOver=false;
@@ -194,7 +221,6 @@ function next()
                     velocityY = 0;
                     getData();
                     update();
-                    
                 }
         }
 

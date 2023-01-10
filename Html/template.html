@@ -11,7 +11,7 @@
 <body onload="makeprogress()">
     <div id="conta">
         <label for="timer">exam end at 10m</label>
-        <progress id="timer" min="0" value="100" max="100" style="width: 98%; border-radius: 5px; border: 2px black solid;"></progress>
+        <progress id="timer" min="0" value="1300" max="1300" style="width: 98%;background-color: aquamarine;"></progress>
         <div id="head"  draggable="true" ondragstart="drag(event)">
         </div>
         <div id="contin"  >
@@ -23,7 +23,7 @@
        
     </div>
 
-    <button id="submit" style="position: fixed; top: 94%;left: 50%; padding: 7px;" onclick="checkanswer()">Submit Answers</button>
+    <button id="submit" onclick="checkanswer()">Submit Answers</button>
     <audio src="../audio/click.mpeg" id="drag" hidden></audio>
     <audio src="../audio/correct.mpeg" id="correctanswer" hidden></audio>
     <audio src="../audio/wrong.mpeg" id="wronganswer" hidden></audio>
