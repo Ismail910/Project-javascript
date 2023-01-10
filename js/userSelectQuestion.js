@@ -11,7 +11,7 @@ function getData(){
                 console.log(dataAfterConvert[i]['level']);
                 const para = document.createElement('a');
                 const node = document.createTextNode(dataAfterConvert[i]['name']);
-                para.href="../Html/template.html";
+                para.href="/Html/template.html";
                 para.id=dataAfterConvert[i]['level'];
                 para.appendChild(node);
                 document.getElementById("menu").appendChild(para);
@@ -27,7 +27,7 @@ function getData(){
         }
     }
 
-    xhttp.open("GET","../json/questionandAnswer.json",true);
+    xhttp.open("GET","/json/questionandAnswer.json",true);
     xhttp.send();
 
 }
