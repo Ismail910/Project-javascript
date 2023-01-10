@@ -1,13 +1,28 @@
 body{
-    background-image: url("background.svg");
     font-family: 'Fira Sans', sans-serif;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: #57606f;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 button{
-    width: 120px;
-    height: 40px;
+    width: 150px;
+    height: 45px;
+    border-radius: 20px;
+    border: none;
+    background-color: #2bab1f;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px;
+}
+button:hover,:checked{
+    background-color: #14610d;
+    color: white;
+    cursor: pointer;
+    
 }

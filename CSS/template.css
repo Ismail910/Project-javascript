@@ -59,17 +59,15 @@ body{
 }
 #continer
 {
-    background-color: rgb(2, 2, 2);
-    display:none;
-    border: 1px solid white;
+    background-color: #00225e;
+    display: none;
     border-radius: 10px;
     width: 15%;
     height: 300px;
     padding:10px;
-    margin: 300px auto;
+    margin: 190px auto;
     transform: scale(2);
     perspective: 600px;
-
 }
 
 .que{
@@ -110,5 +108,35 @@ body{
     
     color: white;
     background-color:#10e194 ;
+    cursor: pointer;
+}
+
+#grade,#time{
+    padding: 5px;
+    color: rgb(255, 255, 255);
+     border-radius: 5px;
+     border: none;
+}
+#showcorrectanswer,#startagain,#showyouranswer,#selectnewlevel{
+    padding: 5px;
+     color: rgb(255, 255, 255);
+     background-color: #007f04;
+      border-radius: 5px;
+      border: none;
+}
+#showcorrectanswer:hover{
+    background-color: #1f2e37;
+    cursor: pointer;
+}
+ #startagain:hover{
+    background-color: #1f2e37;
+    cursor: pointer;
+}
+  #showyouranswer:hover{
+    background-color: #1f2e37;
+    cursor: pointer;
+} 
+ #selectnewlevel:hover{
+    background-color: #1f2e37;
     cursor: pointer;
 }
