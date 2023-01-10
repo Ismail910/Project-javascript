@@ -1,0 +1,314 @@
+* {
+    box-sizing:border-box;
+}
+body
+{
+    background-color: #335f78;
+    width: 1920px;
+}
+
+::-webkit-scrollbar {
+    width:0px;
+    height:0px;
+    }
+    
+::-webkit-scrollbar-thumb { 
+    width:0px;
+    display:none;
+}
+    
+
+main
+{
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 10%;
+    height: 270px;
+    padding:10px;
+    margin: 300px auto;
+    transform: scale(2);
+    color:#335f78;
+
+}
+
+.card
+{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front
+{
+    border: 1px solid white;
+    padding: 5px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    height: 205px;
+    transform: rotateY(180deg);
+
+}
+
+.front .study-face
+{
+    transition: 1.5s;
+}
+
+.front .top-part
+{
+    border: 1px solid white;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.study-face .redo-button, .play-button, .redo-button-back
+{
+    float: left;
+    font-size: 12px;
+    cursor: grab;
+}
+
+.front .play-button
+{
+    float: right;
+    position: relative;
+    bottom:2px;
+}
+
+.front .puase-button
+{
+    fill: rgb(206 203 199);
+    position: absolute;
+    top: 25px;
+    right: 41px;
+    width: 58px;
+    visibility: hidden;
+}
+
+
+
+img
+{
+    width: 100%;
+    height: 120px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+
+}
+
+.front .example
+{
+    font-size: 12px;
+}
+
+.front .example
+{
+    font-size: 12px;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+section #spell-bottom
+{
+    display: inline-block;
+    border: none;
+    border-left: 1px solid #f2f2f2;
+    border-right: 1px solid #f2f2f2;
+    background-color: #dfe6e9;
+    color: #335f78;
+    padding: 10px;
+    width: 68%;
+    cursor: grab;
+    backface-visibility: hidden;
+    text-transform: uppercase;
+
+}
+
+
+.spelling-face
+{
+    height: 197px;
+    padding: 7px;
+    text-align: center;
+    position: relative;
+    bottom: 212px;
+    transition: 1.5s;
+    visibility: hidden;
+    overflow: auto;
+
+}
+
+
+.spelling-face .user_resualt
+{
+    position: relative;
+    right: 7px;
+    border: 1px solid rgb(215, 213, 210);
+    color: rgb(139 134 127);
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 11px;
+    width: 44px;
+    text-align: center;
+    display: block;
+}
+
+
+.spelling-face .num_of_succ
+{
+    top: 15px;
+}
+
+.spelling-face .num_of_fail
+{
+    top: 45px;
+}
+
+.repate_button 
+{
+    border: 1px solid rgb(215, 213, 210);
+    position: relative;
+    left: 12px;
+    bottom: 83px;
+    font-size: 10px;
+    padding: 3px;
+    border-radius: 6px;
+    color: rgb(141 138 134);
+    transition: 1.5s;
+}
+
+
+.repate_button_active
+{
+    background-color: #335f78;
+    color: white;
+    border: 0;
+}
+
+.user_input
+{
+    border: 1px solid rgb(215, 213, 210);
+    width: 133px;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.user_input:focus
+{
+    outline: 1px solid rgb(215, 213, 210);
+
+}
+
+
+
+.play-button-spell
+{
+    position: relative;
+    bottom: 28px;
+    left: 20px;
+    font-size: 33px;
+    border-radius: 13px;
+    padding: 6px;
+    fill: rgb(206 203 199);
+}
+
+
+.spelling-face .submit-button
+{
+    border-left: 1px solid rgb(215, 213, 210);
+    color: #335f78;
+    border-radius: 0 6px 7px 0;
+    padding: 4px;
+    position: relative;
+    bottom: 22px;
+    left: 54px;
+    cursor: pointer;
+}
+
+.spelling-face  .word-char
+{
+    padding: 4px;
+}
+
+.spelling-face  .char
+{
+    display: inline-block;
+    border-radius: 4px;
+    padding: 5px;
+    margin-right: 3px;
+    margin-top: 4px;
+    width: 20px;
+}
+
+
+.word_char
+{
+    opacity: 0;
+    transition: 1.5s;
+}
+
+.right-char
+{
+    background-color:rgb(32, 176, 47);
+    color:white;
+}
+
+.wrong-char
+{
+    background-color: #d63031;
+    color:white;
+}
+
+
+
+.back
+{
+    border: 1px solid white;
+    position: relative;
+    bottom: 192px;
+    height: 150px;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+
+.back .meaning
+{
+    margin-top: 39px;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+  }
+  
+
+.card-bottom
+{
+    position: absolute;
+    bottom: -55px;
+    width: 114%;
+    left: -12px;
+    border-top: 1px solid rgb(228 225 221);
+    border-radius: 0 0 9px 7px;
+    color: #335f78;
+    background-color: #dfe6e9;
+    backface-visibility: hidden;
+}
+
+.card-bottom .fa-arrow-left, 
+.card-bottom .fa-arrow-right
+{
+    padding:6px;
+    cursor: pointer;
+}
+
+.visable{visibility: visible;}
+
+
+
+
+
+

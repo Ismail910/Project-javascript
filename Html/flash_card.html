@@ -1,0 +1,95 @@
+<!Document html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flash Card Project</title>
+        <link rel="stylesheet" href="../CSS/reset.css">
+        <link rel="stylesheet" href="../CSS/flash_card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    </head>
+<body>
+        <main class="continer">
+            <section class="card">
+                <section class="front">
+                    <section class="study-face">
+                        <div class="top-part">
+                            <i class="redo-button fa-solid fa-arrow-rotate-left" onclick="toggle()"></i>
+                            <span class="word">example</span>
+                            <svg class="play-button" fill="#000000" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                viewBox="0 0 64 64" xml:space="preserve" onclick="playAudio(this)">
+                                <g>
+                                    <path d="M45.563,29.174l-22-15c-0.307-0.208-0.703-0.231-1.031-0.058C22.205,14.289,22,14.629,22,15v30
+                                        c0,0.371,0.205,0.711,0.533,0.884C22.679,45.962,22.84,46,23,46c0.197,0,0.394-0.059,0.563-0.174l22-15
+                                        C45.836,30.64,46,30.331,46,30S45.836,29.36,45.563,29.174z M24,43.107V16.893L43.225,30L24,43.107z"/>
+                                    <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+                                        S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="middle-part">
+                            <img class="picture" src="../images/orange.jpeg" alt="A picture" />
+                            <p class="example">This is just an example for the use of the word</p>
+                        </div>
+                    </section>
+
+                    <section class="spelling-face">
+                        <p class="user_resualt num_of_succ">
+                            <span class="succ_try">0</span> /
+                            <span>1</span>
+                        </p>
+                        <p class="user_resualt num_of_fail">
+                            <span class="fail_try">0</span> /
+                            <span>3</span>                          
+                        </p>
+                        <svg class="play-button-spell" fill="#000000" height="70px" width="70px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        viewBox="0 0 64 64" xml:space="preserve" onclick="playAudio(this)">
+                            <g>
+                                <path d="M45.563,29.174l-22-15c-0.307-0.208-0.703-0.231-1.031-0.058C22.205,14.289,22,14.629,22,15v30
+                                    c0,0.371,0.205,0.711,0.533,0.884C22.679,45.962,22.84,46,23,46c0.197,0,0.394-0.059,0.563-0.174l22-15
+                                    C45.836,30.64,46,30.331,46,30S45.836,29.36,45.563,29.174z M24,43.107V16.893L43.225,30L24,43.107z"/>
+                                <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+                                    S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+                            </g>
+                         </svg>
+                        <span class="repate_button" onclick="audoPlay()">
+                            <i class="fa-solid fa-repeat"></i>
+                        </span>
+                        <input class="user_input">
+                        <buuton class="submit-button" onclick="checkWord()">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </buuton>
+                        <div class="word_char">
+                        </div>
+
+                    </section>
+                    <section class="card-bottom">
+                        <i class="fa-solid fa-arrow-left" onclick="getPrevWord()"></i>
+                        <input type="button" value="Spelling" id="spell-bottom" onclick="spellToggle()">
+                        <i class="fa-solid fa-arrow-right" onclick="getNextWord()"></i>
+                    </section>
+                </section>
+
+                <section class="back">
+                    <div class="top-part-back">
+                        <i class="redo-button-back fa-solid fa-arrow-rotate-left" onclick="toggle()"></i>
+                    </div>
+                    <div class= "middle-part-back">
+                        <p class="meaning">This is the meaning of the word that you have to study</p>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <audio class="word-audio" src="../audio/orange.mp3"></audio>
+                <audio class="correct-answer" src="../audio/correct-answer.mp3"></audio>
+                <audio class="correct-answer-wave" src="../audio/correct-answer-waving.mp3"></audio>
+                <audio class="wrong-answer" src="../audio/wrong-answer.mp3"></audio>
+                <audio class="wrong-answer-dispointed" src="../audio/wrong-answer-dispointed.mp3"></audio>
+                <audio class="click-audio" src="../audio/click-sound.mp3"></audio>
+
+
+            </section>
+        </main>
+        <script src="../js/flash_card.js"></script>
+    </body>
+</html>

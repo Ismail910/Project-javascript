@@ -1,27 +1,45 @@
 [
     {
-     "level": 1,
-     "name":"levelone",
-     "questions":[
-        { "question":"Q"},
-        { "question":"Question2"},
-        { "question":"Question13"}
-
-       
-        
-     ]
-    } ,
-
+        "word":"orange",
+        "meaning":"a citrus fruit that is round and that has an orange skin",
+        "example":"a slice of orange"
+    },
     {
-     "level": 2,
-     "name":"leveltwo",
-     "questions":[
-        { "question":"Question1"},
-        { "question":"Question2"},
-        { "question":"Question3"}
-
-       
-     ]
-     
+        "word":"ball",
+        "meaning":"a usually round object that is used in a game or sport or as a toy",
+        "example":"a tennis/soccer ball"
+    },    {
+        "word":"water",
+        "meaning":"the clear liquid that has no color, taste, or smell, that falls from clouds as rain, that forms streams, lakes, and seas, and that is used for drinking, washing, etc.",
+        "example":"Would you like a glass of water?"
+    },    {
+        "word":"river",
+        "meaning":" a large natural flow of water that crosses an area of land and goes into an ocean, a lake, etc.",
+        "example":"They have a house on the river"
+    },    {
+        "word":"forest",
+        "meaning":" a thick growth of trees and bushes that covers a large area",
+        "example":"Fires destroyed acres of forest."
+    },    {
+        "word":"mountain",
+        "meaning":"an area of land that rises very high above the land around it and that is higher than a hill",
+        "example":"He climbed the mountain."
+    },    {
+        "word":"deer",
+        "meaning":"a large wild animal that has four long thin legs, brown fur, and antlers if male",
+        "example":"Juan, in this lap please, we've seen a deer on the circuit. "
+    },    {
+        "word":"glass",
+        "meaning":"a hard usually transparent material that is used for making windows and other products",
+        "example":"He broke the glass."
+    },    {
+        "word":"key",
+        "meaning":"a device that is used to open a lock or start an automobile,The usual type of key is a small metal object that you insert into a narrow opening and turn.",
+        "example":"She turned the key and opened the door."
+    },    {
+        "word":"umbrella",
+        "meaning":"a device that is used for protection from the rain and sun,An umbrella consists of a circle of fabric attached to a folding frame that is connected to a central pole or handle.",
+        "example":"You shouldn't go out in the rain without an umbrella."
     }
- ]
+
+]
