@@ -33,13 +33,15 @@ function checkMatch()
             Score++;
             disablCards()
             console.log(Score);
+            document.getElementById("correctanswer").play();
            
            
         }else{
             unFilpCards () 
-            Score--
-            if (Score == -5)
-            Score = 0;
+            // Score--
+            // if (Score == -5)
+            // Score = 0;
+            document.getElementById("wronganswer").play(); 
         }
         scores.innerText = Score;
         return Score ;

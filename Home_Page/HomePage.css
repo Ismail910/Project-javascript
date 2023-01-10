@@ -5,6 +5,10 @@
 }
 img {
     width: 300px;
+    height: 100%;
+}
+a{
+    height: 90%;
 }
 a:link {
     color: brown;

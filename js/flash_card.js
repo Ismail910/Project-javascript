@@ -353,8 +353,8 @@ function getPrevWord()
 			meaning.innerHTML = wordDetiles[pointer].meaning
 			example.innerHTML = wordDetiles[pointer].example
 
-			picture.src = `images/${wordDetiles[pointer].word}.jpeg`
-			wordAudio.src = `audio/${wordDetiles[pointer].word}.mp3`
+			picture.src = `../images/${wordDetiles[pointer].word}.jpeg`
+			wordAudio.src = `../audio/${wordDetiles[pointer].word}.mp3`
 
 		}
 	}

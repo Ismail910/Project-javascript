@@ -194,7 +194,7 @@ function backtolevel()
     document.getElementById("continer").style.display="none";
     document.getElementById("grade").innerText="your grade =";
     document.getElementById("time").innerText="finish in time :";
-    location.replace("index.html");
+    location.replace("level.html");
 }
 function getcorrectanswer()
 {
