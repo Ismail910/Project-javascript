@@ -2,16 +2,26 @@
             padding: 0;
             margin: 0;
             box-size:border-box;
+
         }
         body {
-            background: rgba(39, 69, 114, 0.4);
+            background: #16a085;
         }
-        #container {
-            /* width: ; */
-            margin: 0 auto;
-            margin-top: 150px;
-            
-        }
+#login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    margin-top: 200px;
+}
+#register{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 90px;
+}
 
         /* .tabs {
             display: table-cell;
@@ -34,45 +44,42 @@
         /* #lt {
             background-color: rgb(147, 195, 218);
         } */
-        #cont {
-            /* width: 100%; */
-            /* height: 300px; */
-            /* background-color: rgba(177, 206, 214, 0.82); */
-            border: 2px solid #ffffff;
-            display: flex;
-            justify-content: space-between;
-            align-content: center;
+        a{
+            color: rgb(13, 255, 21);
         }
 
        #login input{
             display: block;
-            width: 250px;
-            margin: 30px 50px;
+            width: 300px;
+            margin: 20px 50px;
             padding: 10px;
+            border: none;
             font-size: 1.3em;
+            border-radius: 15px;
             color: rgba(42, 67, 73, 0.82);
             outline: 2px solid #ffffff;
         }
-        hr {
-            background: rgb(19, 18, 18);
-            width: 10px;
-        }
-        
+
         #register input {
-            display: inline-block;
-            width: 250px;
-            margin: 30px ;
+            display: block;
+            width: 300px;
+            margin: 20px 50px;
             padding: 10px;
-            font-size: 1.3em;
+            border: none;
+            font-size: 1.2em;
+            border-radius: 15px;
             color: rgba(42, 67, 73, 0.82);
             outline: 2px solid #ffffff;
         }
         #register input[type="submit"] {
-            margin-left:30%;
+            width: 250px;
+            margin-left:3%;
         }
 
         input[type="submit"] {
-            width: 200px;
+            width: 150px;
+            background-color: aqua;
+            border: none;
             color: #6e6e6e;
             
         }
@@ -90,12 +97,12 @@
            
         }
 
-        h3 {
+        h1 {
             display: table-cell;
             vertical-align: middle;
-            padding: 10px 15px;
-            font-size: 1.5em;
-            color: #ffffff;
+            padding: 20px 15px;
+            font-size: 50px;
+            color: #8e44ad;
         }
 
         #forgot h3 {
