@@ -105,7 +105,7 @@ function getData(){
         }
     }
 
-    xhttp.open("GET","/json/questionandAnswer.json",true);
+    xhttp.open("GET","../json/questionandAnswer.json",true);
     xhttp.send();
 
 }
@@ -161,7 +161,7 @@ getData();
            
         }
     }
-    xhttp.open("GET","/json/questionandAnswer.json",true);
+    xhttp.open("GET","../json/questionandAnswer.json",true);
     xhttp.send();
 }
 
@@ -229,7 +229,7 @@ function getcorrectanswer()
            
         }
     }
-    xhttp.open("GET","/json/questionandAnswer.json",true);
+    xhttp.open("GET","../json/questionandAnswer.json",true);
     xhttp.send();
 
    

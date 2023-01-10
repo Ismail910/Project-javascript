@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/CSS/template.css">
+    <link rel="stylesheet" href="../CSS/template.css">
     
 </head>
 <body onload="makeprogress()">
@@ -24,25 +24,24 @@
     </div>
 
     <button id="submit" onclick="checkanswer()">Submit Answers</button>
-    <audio src="/audio/click.mpeg" id="drag" hidden></audio>
-    <audio src="/audio/correct.mpeg" id="correctanswer" hidden></audio>
-    <audio src="/audio/wrong.mpeg" id="wronganswer" hidden></audio>
+    <audio src="../audio/click.mpeg" id="drag" hidden></audio>
+    <audio src="../audio/correct.mpeg" id="correctanswer" hidden></audio>
+    <audio src="../audio/wrong.mpeg" id="wronganswer" hidden></audio>
 
 
     <div id="continer">
-        
-        <p id="grade">your grade =</p>
-        <p id="time">finish in time :</p> 
-        <button id="showcorrectanswer" onclick="getcorrectanswer()" >Show Correct Answer</button>
-        <button id="startagain"
-         onclick="back()" >Start Again </button>
-         <button id="showyouranswer"
-         onclick="backmyanswer()" >Show My Answer </button>
-        <button id="selectnewlevel" 
-        onclick="backtolevel()">Select New Level</button>
-   
+        <p id="grade" style="padding: 5px; color: gray; border-radius: 5px;">your grade =</p>
+        <p id="time"style="padding: 5px; color: gray; border-radius: 5px;">finish in time :</p> 
+        <button id="showcorrectanswer" style="padding: 5px; color: gray; border-radius: 10px;" onclick="getcorrectanswer()" >Show Correct Answer</button>
+        <button id="startagain" style="padding: 5px; color: gray; border-radius: 10px;"
+         onclick="back()" >Start again </button>
+         <button id="showyouranswer" style="padding: 5px; color: gray; border-radius: 10px;"
+         onclick="backmyanswer()" >show my answer </button>
+        <button id="selectnewlevel" style="padding: 5px; color: gray; border-radius: 10px;"
+        onclick="backtolevel()">Select new Level</button>
+
     </div>
   
-   <script src="/js/getQuestionandAnswer.js"></script>
+   <script src="../js/getQuestionandAnswer.js"></script>
 </body>
 </html>

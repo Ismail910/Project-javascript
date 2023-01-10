@@ -27,7 +27,7 @@ function getData(){
         }
     }
 
-    xhttp.open("GET","/json/questionandAnswer.json",true);
+    xhttp.open("GET","../json/questionandAnswer.json",true);
     xhttp.send();
 
 }
