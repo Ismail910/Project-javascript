@@ -1,0 +1,32 @@
+{
+  
+    "name":"ismail extention", 
+    "version":"1.0",  
+    "manifest_version":2,
+    "description":"This is new extention in chrome ",
+     "content_scripts":[
+        {
+            "matches":["http://127.0.0.1:5500/prayerTimings.html"],
+            "js":["prayerTimings.js"]
+        }
+     ],
+     "browser_action": {
+        "default_popup": "prayerTimings.html"
+     },
+     "icons": {
+        "16":"icon.jpg",
+        "48":"icon.jpg",
+        "128":"icon.jpg"
+     },
+     "Prayer_Timings":[{
+      "Fajr": {"Hours":"05" ,"Minutes" : "17"},
+      "Shrouk": {"Hours":"06" ,"Minutes" : "46"},
+      "Dhuhr": {"Hours":"12" ,"Minutes" : "03"},
+      "Asr": {"Hours":"03" ,"Minutes" : "00"},
+      "Maghrib": {"Hours":"05" ,"Minutes" : "20"},
+      "Isha": {"Hours":"06" ,"Minutes" : "40"}
+      
+  }]
+
+    
+}
